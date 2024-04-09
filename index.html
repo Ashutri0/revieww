@@ -36,45 +36,45 @@
     </form>
 
     <script>
-        function changeSubmitButton() {
-            var productSelect = document.getElementById("product").value;
-            var submitButton = document.getElementById("submit-btn");
-            var anchorTag;
+        // function changeSubmitButton() {
+        //     var productSelect = document.getElementById("product").value;
+        //     var submitButton = document.getElementById("submit-btn");
+        //     var anchorTag;
 
-            switch(productSelect) {
-                case "product1":
-                    anchorTag = "<a href='product1_details.html'>Product 1 Details</a>";
-                    break;
-                case "product2":
-                    anchorTag = "<a href='product2_details.html'>Product 2 Details</a>";
-                    break;
-                case "product3":
-                    anchorTag = "<a href='product3_details.html'>Product 3 Details</a>";
-                    break;
-                case "product4":
-                    anchorTag = "<a href='product4_details.html'>Product 4 Details</a>";
-                    break;
-                case "product5":
-                    anchorTag = "<a href='product5_details.html'>Product 5 Details</a>";
-                    break;
-                case "product6":
-                    anchorTag = "<a href='product6_details.html'>Product 6 Details</a>";
-                    break;
-                case "product7":
-                    anchorTag = "<a href='product7_details.html'>Product 7 Details</a>";
-                    break;
-                case "product8":
-                    anchorTag = "<a href='product8_details.html'>Product 8 Details</a>";
-                    break;
-                case "product9":
-                    anchorTag = "<a href='product9_details.html'>Product 9 Details</a>";
-                    break;
-                default:
-                    anchorTag = "<a href='#'>Details</a>";
-            }
+        //     switch(productSelect) {
+        //         case "product1":
+        //             anchorTag = "<a href='product1_details.html'>Product 1 Details</a>";
+        //             break;
+        //         case "product2":
+        //             anchorTag = "<a href='product2_details.html'>Product 2 Details</a>";
+        //             break;
+        //         case "product3":
+        //             anchorTag = "<a href='product3_details.html'>Product 3 Details</a>";
+        //             break;
+        //         case "product4":
+        //             anchorTag = "<a href='product4_details.html'>Product 4 Details</a>";
+        //             break;
+        //         case "product5":
+        //             anchorTag = "<a href='product5_details.html'>Product 5 Details</a>";
+        //             break;
+        //         case "product6":
+        //             anchorTag = "<a href='product6_details.html'>Product 6 Details</a>";
+        //             break;
+        //         case "product7":
+        //             anchorTag = "<a href='product7_details.html'>Product 7 Details</a>";
+        //             break;
+        //         case "product8":
+        //             anchorTag = "<a href='product8_details.html'>Product 8 Details</a>";
+        //             break;
+        //         case "product9":
+        //             anchorTag = "<a href='product9_details.html'>Product 9 Details</a>";
+        //             break;
+        //         default:
+        //             anchorTag = "<a href='#'>Details</a>";
+        //     }
 
-            submitButton.innerHTML = anchorTag;
-        }
+        //     submitButton.innerHTML = anchorTag;
+        // }
 
         document.getElementById("submit-btn").addEventListener("click", function() {
             var formData = {
