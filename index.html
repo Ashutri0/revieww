@@ -1,20 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="Google Sheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Order Form</title>
 </head>
 <body>
-	<div class="container">
-		<form method="post" action="" name="contact-form">
-			<h4>Contact Us</h4>
-			<input type="text" name="your-name" placeholder="Name">
-			<input type="text" name="your-number" placeholder="Number">
-			<input type="email" name="your-email" placeholder="Email">
-			<textarea name="message" rows="7" placeholder="Your Message"></textarea>
-			<input type="submit" value="Submit" id="submit">
-		</form>
-	</div>
+    <form id="orderForm" method="post" action="https://script.google.com/macros/s/AKfycbwEtLznEQNBSaKciejOYoS4L2GLKgC_6UeVvmJXLtNkIgs-Eekkwzr-KDi_RWUhJtCd/exec" name="Review-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
 
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone No.:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="invoice">Invoice No.:</label><br>
+        <input type="text" id="invoice" name="invoice"><br><br>
+
+        <label for="product">Select Product:</label><br>
+        <select id="product" name="product" onchange="changeSubmitButton()">
+            <option value="product1">Product 1</option>
+            <option value="product2">Product 2</option>
+            <option value="product3">Product 3</option>
+            <option value="product4">Product 4</option>
+            <option value="product5">Product 5</option>
+            <option value="product6">Product 6</option>
+            <option value="product7">Product 7</option>
+            <option value="product8">Product 8</option>
+            <option value="product9">Product 9</option>
+        </select><br><br>
+
+        <button type="button" id="submit-btn">Submit</button>
+    </form>
+
+    <script>
+        function changeSubmitButton() {
+            var productSelect = document.getElementById("product").value;
+            var submitButton = document.getElementById("submit-btn");
+            var anchorTag;
+
+            switch(productSelect) {
+                case "product1":
+                    anchorTag = "<a href='product1_details.html'>Product 1 Details</a>";
+                    break;
+                case "product2":
+                    anchorTag = "<a href='product2_details.html'>Product 2 Details</a>";
+                    break;
+                case "product3":
+                    anchorTag = "<a href='product3_details.html'>Product 3 Details</a>";
+                    break;
+                case "product4":
+                    anchorTag = "<a href='product4_details.html'>Product 4 Details</a>";
+                    break;
+                case "product5":
+                    anchorTag = "<a href='product5_details.html'>Product 5 Details</a>";
+                    break;
+                case "product6":
+                    anchorTag = "<a href='product6_details.html'>Product 6 Details</a>";
+                    break;
+                case "product7":
+                    anchorTag = "<a href='product7_details.html'>Product 7 Details</a>";
+                    break;
+                case "product8":
+                    anchorTag = "<a href='product8_details.html'>Product 8 Details</a>";
+                    break;
+                case "product9":
+                    anchorTag = "<a href='product9_details.html'>Product 9 Details</a>";
+                    break;
+                default:
+                    anchorTag = "<a href='#'>Details</a>";
+            }
+
+            submitButton.innerHTML = anchorTag;
+        }
+
+        document.getElementById("submit-btn").addEventListener("click", function() {
+            var formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                invoice: document.getElementById("invoice").value,
+                product: document.getElementById("product").value
+            };
+
+            google.script.run.submitForm(formData);
+        });
+    </script>
 	<script src="script.js"></script>
 </body>
 </html>
